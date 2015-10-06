@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +23,7 @@ public class CountryController {
 
 	
 	 @RequestMapping(value="/countryList", method = RequestMethod.GET, produces = "application/json")
-	   public  @ResponseBody List<Country> greeting()  {
+	   public  List<Country> greeting()  {
 		   List<Country> listUsers = CountryService.getAllCountries();
 	       return listUsers;
 	   }
