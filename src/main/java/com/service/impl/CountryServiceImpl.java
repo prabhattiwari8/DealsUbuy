@@ -10,7 +10,7 @@ import com.dao.CountryDAO;
 import com.model.Country;
 import com.service.CountryService;
 
-@Service
+@Service("countryService")
 public class CountryServiceImpl implements CountryService {
 
 	@Autowired

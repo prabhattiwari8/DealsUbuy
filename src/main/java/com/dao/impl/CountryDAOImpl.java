@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.dao.CountryDAO;
 import com.model.Country;
 
-@Repository
+@Repository("countryDAO")
 public class CountryDAOImpl implements CountryDAO {
 	
 	@Autowired
