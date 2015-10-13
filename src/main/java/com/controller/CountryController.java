@@ -21,8 +21,8 @@ public class CountryController {
 	private CountryService CountryService;
 	
 
-	
-	 @RequestMapping(value="/countryList", method = RequestMethod.GET, produces = "application/json")
+	 
+	  @RequestMapping(value="/countryList", method = RequestMethod.GET, produces = "application/json")
 	   public  List<Country> greeting()  {
 		   List<Country> listUsers = CountryService.getAllCountries();
 	       return listUsers;
