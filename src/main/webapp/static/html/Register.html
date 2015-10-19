@@ -1,7 +1,28 @@
-<div class='registerform animated'>
-	<label>Country:</label>
-	<select ng-model="selctedCountry">
-		<option ng-repeat="u in ctrl.countries" ng-value=u.countryName>{{u.countryName}}
-		</option>
-	</select>
+<div class="registerform">
+<form name="form" ng-submit="submitForm(userForm.$valid)" novalidate>
+<div class="control-group" ng-class="{'has-error form-inline':submitted && form.email.$invalid}">
+        <label class="control-label glyphicon glyphicon-envelope">Your email address</label>
+        <div class="controls">
+            <input type="email" name="email" ng-model="self.user.email" required />
+            <span  class="has-error help-block" ng-show="submitted && form.email.$error.required">** Email is required  </span>
+            <span class="has-error help-block" ng-show="submitted && form.email.$error.email">**Enter valid email</span>
+        </div>
+</div>
+<div class="control-group" ng-class="{'has-error form-inline':submitted && form.password.$invalid}">
+        <label class="control-label glyphicon glyphicon-lock">Password</label>
+        <div class="controls">
+            <input type="password" name="password" ng-model="self.user.password" required />
+            <span  class="has-error help-block" ng-show="submitted && form.password.$error.required">** Password is required  </span>
+        </div>
+</div>
+<div class="control-group" ng-class="{'has-error form-inline':submitted && form.confirmpassword.$invalid}">
+        <label class="control-label glyphicon glyphicon-lock">Confirm Password</label>
+        <div class="controls">
+            <input type="password" name="confirmpassword" ng-model="self.user.confirmpassword" compare-to="self.user.password" required />
+            <span  class="has-error help-block" ng-show="submitted && form.confirmpassword.$error.required">** Confirm Password is required  </span>
+             <span  class="has-error help-block" ng-show="submitted && form.confirmpassword.$error.compareTo">**invalid Confirm Password </span>
+        </div>
+</div>
+    <button type="submit" class="btn btn-primary btn-large" ng-click="submitted=true">Register!</button>
+</form>
 </div>
