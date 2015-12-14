@@ -20,3 +20,4 @@ function config($routeProvider, $locationProvider) {
 
         .otherwise({ redirectTo: '/' });
     }
+

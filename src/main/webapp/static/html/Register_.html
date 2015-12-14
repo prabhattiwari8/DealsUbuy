@@ -64,7 +64,7 @@
 			ng-class="{'has-error form-inline':submitted && form.phone.$invalid}">
 			<label class="control-label glyphicon glyphicon-lock">Phone</label>
 			<div class="controls">
-				<input type="text" name="phone" ng-model="self.user.phone"
+				<input type="number" name="phone" ng-model="self.user.phone"
 					ng-maxlength=12 ng-minlength=12
 					ng-pattern="/^[0-9]+-+[0-9]+-+[0-9]+$/" required /> <span
 					class="help-inline"
@@ -92,7 +92,8 @@
 			ng-class="{'has-error form-inline':submitted && form.address2.$invalid}">
 			<label class="control-label glyphicon glyphicon-lock">Address2</label>
 			<div class="controls">
-				<input type="text" name="address2" ng-model="self.user.address2" />
+				<input type="text" name="address2" ng-model="self.user.address2"
+					required />
 			</div>
 		</div>
 
@@ -116,8 +117,8 @@
 			<label class="control-label glyphicon glyphicon-lock">City</label>
 			<div class="controls">
 				<select ng-model="self.user.city">
-					<option ng-repeat="u in ctrl.cities" ng-value=u.cityName
-						required="required">{{u.cityName}}</option>
+					<option ng-repeat="u in ctrl.countries" ng-value=u.countryName
+						required="required">{{u.countryName}}</option>
 				</select> 
 			</div>
 		</div>
@@ -126,8 +127,8 @@
 			<label class="control-label glyphicon glyphicon-lock">State</label>
 			<div class="controls">
 				<select ng-model="self.user.state">
-					<option ng-repeat="u in ctrl.states" ng-value=u.stateName
-						required="required">{{u.stateName}}</option>
+					<option ng-repeat="u in ctrl.countries" ng-value=u.countryName
+						required="required">{{u.countryName}}</option>
 				</select> 
 			</div>
 		</div>
@@ -141,11 +142,9 @@
 				</select> 
 			</div>
 		</div>
-		<div class="control-group">
-		<div class="controls">
+		<div>
 			<button type="submit" class="btn btn-primary btn-large"
 				ng-click="submitted=true">Register!</button>
-		</div>
 		</div>
 	</form>
 </div>
