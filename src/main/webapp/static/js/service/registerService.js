@@ -39,7 +39,21 @@ fetchAllCities: function() {
                         return $q.reject(errResponse);
                     }
             );
-}
+},
+saveUser: function(userJSON) {
+	
+    return $http.post('http://localhost:8080/DealsUbuy/saveUser',userJSON)
+            .then(
+            		console.log('Data:', userJSON),
+                    function(response){
+                        return response.data;
+                    },
+                    function(errResponse){
+                        console.error('Error while fetching cityList');
+                        return $q.reject(errResponse);
+                    }
+            );
+},
     };
    
  

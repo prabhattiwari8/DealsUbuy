@@ -19,6 +19,7 @@ public class CityDAOImpl implements CityDAO {
 	@Override
 	public List<City> getAllCities() {
 		List<City> cityList= session.getCurrentSession().createQuery("from City").list();
+		System.out.println("cityList"+cityList);
 		return cityList;
 	}
 

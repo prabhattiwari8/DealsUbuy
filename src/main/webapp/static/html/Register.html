@@ -116,7 +116,7 @@
 			<label class="control-label glyphicon glyphicon-lock">City</label>
 			<div class="controls">
 				<select ng-model="self.user.city">
-					<option ng-repeat="u in ctrl.cities" ng-value=u.cityName
+					<option ng-repeat="u in ctrl.cities" ng-value=u.cityId
 						required="required">{{u.cityName}}</option>
 				</select> 
 			</div>
@@ -126,7 +126,7 @@
 			<label class="control-label glyphicon glyphicon-lock">State</label>
 			<div class="controls">
 				<select ng-model="self.user.state">
-					<option ng-repeat="u in ctrl.states" ng-value=u.stateName
+					<option ng-repeat="u in ctrl.states" ng-value=u.stateId
 						required="required">{{u.stateName}}</option>
 				</select> 
 			</div>
@@ -136,7 +136,7 @@
 			<label class="control-label glyphicon glyphicon-lock">Country</label>
 			<div class="controls">
 				<select ng-model="self.user.country">
-					<option ng-repeat="u in ctrl.countries" ng-value=u.countryName
+					<option ng-repeat="u in ctrl.countries" ng-value=u.countryId
 						required="required">{{u.countryName}}</option>
 				</select> 
 			</div>
